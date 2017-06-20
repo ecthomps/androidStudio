@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Highest Mountain</string>
+    <string name="button_name">Highest Mountain</string>
+    <string name="car_button_name">Favorite Car</string>
+    <string name="hint_name">Enter your Name</string>
+    <string name="display">Show Name</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidTextView</string>
+    <string name="myText">I love this</string>
+    <string name="button1">Hey There</string>
+</resources>
