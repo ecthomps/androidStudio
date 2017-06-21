@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TempConverter</string>
+    <string name="title_name">Know Your Temp</string>
+    <string name="temp_placeHolder">Enter Your Temp</string>
+    <string name="temp_output">convertedTemp</string>
+    <string name="celsius_button_title">C</string>
+    <string name="f_button_title">F</string>
+</resources>
