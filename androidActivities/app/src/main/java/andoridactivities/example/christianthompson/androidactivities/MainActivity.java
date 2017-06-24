@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
     private Button myButton;
+    static final int RESULT_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,33 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("activityOne", "I am from Main Activity");
 
-                startActivity(intent);
+                //doesn't let you retrieve date from other activity
+                //startActivity(intent);
+
+                //opens this activity and retrieve data back from another activity...
+                //expects a result back
+                startActivityForResult(intent, RESULT_CODE);
             }
         });
     }
+
+    //android onActivityResult determines if any value is
+    // return to this activity from another activity
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if(requestCode == RESULT_CODE){
+            if(resultCode == RESULT_OK){    //checks to see if something is coming in
+
+                String result = data.getStringExtra("returnData");
+
+                Toast.makeText(this, result,
+                               Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
 
 //    @Override
 //    protected void onStart() {
