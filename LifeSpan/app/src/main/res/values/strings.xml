@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LifeSpan</string>
+    <string name="userAge">Enter your Age</string>
+    <string name="daysBtn">Days</string>
+    <string name="weeksBtn">Weeks</string>
+    <string name="monthsBtn">Months</string>
+</resources>

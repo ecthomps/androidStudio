@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView displayTemp;
     private double celVal, farVal, tempOut;
     private String showTempVal, decimalFormat;
+    //private DecimalFormat df = new DecimalFormat("0.00");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

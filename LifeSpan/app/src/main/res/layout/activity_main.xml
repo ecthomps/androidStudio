@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cloud"
+    tools:context="lifespan.example.christianthompson.lifespan.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageViewID"
+        android:layout_width="292dp"
+        android:layout_height="61dp"
+        app:srcCompat="@drawable/alive"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.052"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteX="33dp"
+        app:layout_constraintHorizontal_bias="0.504" />
+
+    <EditText
+        android:id="@+id/userAgdId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/userAge"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewID"
+        app:layout_constraintVertical_bias="0.213" />
+
+    <Button
+        android:id="@+id/daysBtnID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/daysBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/userAgdId"
+        app:layout_constraintVertical_bias="0.264" />
+
+    <Button
+        android:id="@+id/weekBtnId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weeksBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/daysBtnID"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/userAgdId"
+        app:layout_constraintVertical_bias="0.259" />
+
+    <Button
+        android:id="@+id/monthBtnId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/monthsBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/weekBtnId"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/userAgdId"
+        app:layout_constraintVertical_bias="0.259" />
+
+    <TextView
+        android:id="@+id/timeLivedId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#0a172c"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userAgdId"
+        app:layout_constraintVertical_bias="0.713" />
+
+</android.support.constraint.ConstraintLayout>
