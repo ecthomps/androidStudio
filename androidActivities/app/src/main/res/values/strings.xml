@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">androidActivities</string>
+    <string name="second_view">I am the Second Activity</string>
+    <string name="main_btn">Go to Second Activity</string>
 </resources>
