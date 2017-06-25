@@ -36,7 +36,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
         switch (v.getId()){
 
-            case R.id.chrisBtnId:
+            case R.id.chrisViewId:
                 Intent chrisIntent = new Intent(MainActivity.this,
                                            BioActivity.class);
                 chrisIntent.putExtra("Chris", chrisBio);
@@ -44,7 +44,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 startActivity(chrisIntent);
                 break;
 
-            case R.id.maryBtnId:
+            case R.id.maryViewId:
                 Intent maryIntent = new Intent(MainActivity.this,
                         BioActivity.class);
                 maryIntent.putExtra("Mary", maryBio);
