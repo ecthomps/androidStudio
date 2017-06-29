@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
     //ArrayAdapter converts an ArrayList of objects into
     // View items loaded into the ListView container
+    //An Adapter is responsible for creatinge between our
+    //data source and our listview
 
     private ListView listView;
 
