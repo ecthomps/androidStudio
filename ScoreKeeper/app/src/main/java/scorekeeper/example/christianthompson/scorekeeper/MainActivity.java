@@ -1,6 +1,7 @@
 package scorekeeper.example.christianthompson.scorekeeper;
 
 import android.graphics.Color;
+import android.graphics.Interpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int p1Score = 0, p2Score = 0, winnigScore;
-    private int winner = Color.GREEN;
+    private int p1Score = 0, p2Score = 0, winningScore = 5;
     private Boolean isGameOver = false;
     private TextView p1Display, p2Display;
     private EditText maxScoreDisplay;
@@ -29,18 +29,24 @@ public class MainActivity extends AppCompatActivity {
         p2Btn = (Button) findViewById(R.id.p2BtnId);
         resetScore = (Button) findViewById(R.id.resBtnId);
 
-        winnigScore = Integer.parseInt(maxScoreDisplay.getText().toString());
+        maxScoreDisplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                winningScore = Integer.parseInt(maxScoreDisplay.getText().toString());
+                reset();
+            }
+        });
 
         p1Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!isGameOver){
                     p1Score++;
-                    if(p1Score == winnigScore){
-                        p1Display.setTextColor(winner);
+                    if(p1Score == winningScore){
                         isGameOver = true;
+                        p1Display.setTextColor(Color.GREEN);
                     }
-                    p1Display.setText(p1Score);
+                    p1Display.setText(Integer.toString(p1Score));
                 }
             }
         });
@@ -50,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!isGameOver){
                     p2Score++;
-                    if(p2Score == winnigScore){
-                        p2Display.setTextColor(winner);
+                    if(p2Score == winningScore){
                         isGameOver = true;
+                        p2Display.setTextColor(Color.GREEN);
                     }
-                    p2Display.setText(p2Score);
+                    p2Display.setText(Integer.toString(p2Score));
                 }
             }
         });
@@ -69,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void reset(){
         p1Score = 0; p2Score = 0;
-        isGameOver = false; winner = Color.BLACK;
-
+        p1Display.setText(Integer.toString(p1Score));
+        p2Display.setText(Integer.toString(p2Score));
+        isGameOver = false; p1Display.setTextColor(Color.BLACK);
+        p2Display.setTextColor(Color.BLACK);
     }
 }
