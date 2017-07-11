@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 //called when the user stops moving the
                 //seeBar thumb/circle
-                
+
                 Toast.makeText(getApplicationContext(), "stopTracking",
                         Toast.LENGTH_LONG).show();
             }

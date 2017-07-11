@@ -1,0 +1,11 @@
+toConvert String to Integer
+ --> int num = Intger.parseInt(string)
+
+toConvert Integer to String
+ --> String myString = Integer.toString(num);
+
+toPaste an Image or Icon in MainActivity
+ --> setIcon(getResources().getDrawable(R.drawable.pic))
+
+toGet Icons/Images from andriod
+ --> setImage(android.R.drawable.optionsToChoose)

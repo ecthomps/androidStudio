@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/list_selector"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:background="#ffeeeade"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dp">
+
+        <ImageView
+            android:id="@+id/imageId"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/tman"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/memberId"
+        android:text="@string/member"
+        android:textSize="20sp"
+        android:textColor="#040404"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/relationId"
+        android:layout_below="@id/memberId"
+        android:text="@string/relation"
+        android:textColor="#ffde3a3d"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/contactId"
+        android:text="@string/contact"
+        android:textColor="#10bcc9"
+        android:textStyle="bold"
+        android:gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:src="@android:drawable/ic_media_play"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/contactId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
