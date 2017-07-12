@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CheckBox</string>
+    <string name="title">Do you have any of these pets</string>
+    <string name="dog_pet">Dogs</string>
+    <string name="cat_pet">Cats</string>
+    <string name="dragon_pet">Dragons</string>
+    <string name="show_pet">Show...</string>
+    <string name="pet_btn">Show</string>
+</resources>
