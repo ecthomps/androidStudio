@@ -14,9 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
     private int p1Score = 0, p2Score = 0, winningScore = 5;
     private Boolean isGameOver = false;
-    private TextView p1Display, p2Display;
-    private EditText maxScoreDisplay;
-    private SeekBar maxScoreVal;
+    private TextView p1Display, p2Display, maxScoreVal;
+
+    private SeekBar seekBar;
     private Button p1Btn, p2Btn, resetScore;
 
     @Override
@@ -26,16 +26,37 @@ public class MainActivity extends AppCompatActivity {
 
         p1Display = (TextView) findViewById(R.id.p1ScoreId);
         p2Display = (TextView) findViewById(R.id.p2ScoreId);
-        maxScoreDisplay = (EditText) findViewById(R.id.maxScoreId);
+        maxScoreVal = (TextView) findViewById(R.id.levelId);
+
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
         p1Btn = (Button) findViewById(R.id.p1BtnId);
         p2Btn = (Button) findViewById(R.id.p2BtnId);
         resetScore = (Button) findViewById(R.id.resBtnId);
 
-        maxScoreDisplay.setOnClickListener(new View.OnClickListener() {
+//        maxScoreDisplay.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                winningScore = Integer.parseInt(maxScoreDisplay.getText().toString());
+//                reset();
+//            }
+//        });
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onClick(View v) {
-                winningScore = Integer.parseInt(maxScoreDisplay.getText().toString());
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                winningScore = progress;
+                maxScoreVal.setText("" + progress);
                 reset();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
 
@@ -77,9 +98,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void reset(){
         p1Score = 0; p2Score = 0;
+        maxScoreVal.setText("" + 0);
         p1Display.setText(Integer.toString(p1Score));
         p2Display.setText(Integer.toString(p2Score));
-        isGameOver = false; p1Display.setTextColor(Color.BLACK);
-        p2Display.setTextColor(Color.BLACK);
+        isGameOver = false; p1Display.setTextColor(getResources().getColor(R.color.playerColor));
+        p2Display.setTextColor(getResources().getColor(R.color.playerColor));
     }
 }

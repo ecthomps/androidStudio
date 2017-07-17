@@ -2,7 +2,6 @@ package christhomps.example.christianthompson.imagebiography;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +16,7 @@ public class BioActivity extends Activity {
     Bundle extras;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bio);
 
