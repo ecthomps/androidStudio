@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,10 +16,11 @@ public class MainActivity extends AppCompatActivity {
     private Boolean isGameOver = false;
     private TextView p1Display, p2Display;
     private EditText maxScoreDisplay;
+    private SeekBar maxScoreVal;
     private Button p1Btn, p2Btn, resetScore;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

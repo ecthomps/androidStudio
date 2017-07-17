@@ -8,4 +8,4 @@ toPaste an Image or Icon in MainActivity
  --> setIcon(getResources().getDrawable(R.drawable.pic))
 
 toGet Icons/Images from andriod
- --> setImage(android.R.drawable.optionsToChoose)
+ --> setImageDrawable(android.R.drawable.optionsToChoose)
