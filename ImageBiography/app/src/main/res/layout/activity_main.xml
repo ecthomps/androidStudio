@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="christhomps.example.christianthompson.imagebiography.MainActivity">
 
-
     <ImageView
         android:id="@+id/chrisId"
         android:layout_width="174dp"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/picha"
-    tools:context="christhomps.example.christianthompson.imagebiography.MainActivity">
+    tools:context="christhomps.example.christianthompson.imagebiography.BioActivity">
 
     <ImageView
         android:id="@+id/imageId"
