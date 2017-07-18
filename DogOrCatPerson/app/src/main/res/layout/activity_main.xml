@@ -68,6 +68,7 @@
                 android:id="@+id/seekBarFelineId"
                 android:layout_width="250dp"
                 android:paddingBottom="5dp"
+                android:max="10"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"/>
 
