@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CurrencyConverter</string>
-    <string name="money">Change THAT Currency</string>
+    <string name="money">Change THAT DOLLAR</string>
+    <string name="value">0.00</string>
     <string name="usa">US</string>
     <string name="ken">KSH</string>
     <string name="eng">Pounds</string>
