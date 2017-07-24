@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MusicDemo</string>
+    <string name="play_btn">Play</string>
+</resources>
