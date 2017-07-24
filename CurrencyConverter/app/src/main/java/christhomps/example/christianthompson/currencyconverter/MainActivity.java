@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,12 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         setUp();
-        currencyValue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                value = Double.parseDouble(currencyValue.getText().toString());
-            }
-        });
+
     }
 
     public void setUp(){
@@ -46,17 +42,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         result = (TextView) findViewById(R.id.resultId);
         currency1 = (TextView) findViewById(R.id.currency1Id);
         currency2 = (TextView) findViewById(R.id.currency2Id);
+
+        usCurrencyBtn.setOnClickListener(this);
+        kshCurrencyBtn.setOnClickListener(this);
+        engCurrencyBtn.setOnClickListener(this);
+        nigCurrencyBtn.setOnClickListener(this);
+        eurCurrencyBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
-
         switch (v.getId()){
             case R.id.usBtn:
                 currency2.setText(getResources().getString(R.string.usa));
-
+                value = Double.parseDouble(currencyValue.getText().toString());
+                result.setText("" + (value * 1));
+                break;
+            case R.id.kshBtn:
+                currency2.setText(getResources().getString(R.string.ken));
+                value = Double.parseDouble(currencyValue.getText().toString());
+                result.setText("" + (value * 103.95));
+                break;
+            case R.id.engBtn:
+                currency2.setText(getResources().getString(R.string.eng));
+                value = Double.parseDouble(currencyValue.getText().toString());
+                result.setText("" + (value * 0.77));
+                break;
+            case R.id.nigBtn:
+                currency2.setText(getResources().getString(R.string.nig));
+                value = Double.parseDouble(currencyValue.getText().toString());
+                result.setText("" + (value * 315.25));
+                break;
+            case R.id.eurBtn:
+                currency2.setText(getResources().getString(R.string.eur));
+                value = Double.parseDouble(currencyValue.getText().toString());
+                result.setText("" + (value * 0.86));
                 break;
         }
     }
+
+
 }
+
+
+
