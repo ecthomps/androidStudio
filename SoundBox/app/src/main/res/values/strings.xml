@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SoundBox</string>
+    <string name="soccer">Soccer</string>
+    <string name="play_soccer">Soccer Song Playing</string>
+    <string name="pause_soccer">Soccer Song Paused</string>
+    <string name="nba">NBA</string>
 </resources>
