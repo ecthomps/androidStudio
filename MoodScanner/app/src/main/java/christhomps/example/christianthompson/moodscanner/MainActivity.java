@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         //getting the drawable background and assign to thumbAnimation
         thumbAnimation = (AnimationDrawable) thumbImage.getBackground();
 
+        moodText = (TextView) findViewById(R.id.result);
+
         //delays click action before showing output
         thumbImage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
