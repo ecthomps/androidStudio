@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SharedPreference_Storage</string>
+    <string name="saveBtn">SAVE</string>
+</resources>
