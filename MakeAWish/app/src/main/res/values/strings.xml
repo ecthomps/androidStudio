@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MakeAWish</string>
+    <string name="title">MAKE A WISH</string>
+    <string name="userTitle">Enter a title</string>
+    <string name="userWish">Enter a wish</string>
+    <string name="submitBtn">Submit</string>
 </resources>
