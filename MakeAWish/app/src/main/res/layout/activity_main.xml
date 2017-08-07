@@ -30,7 +30,8 @@
 
     <EditText
         android:id="@+id/userTitle"
-        android:layout_width="wrap_content"
+        android:background="#fff"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -38,10 +39,10 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/userTitle"
+        android:hint="@string/userTitle"
         android:textColor="#fff"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -51,8 +52,8 @@
 
     <EditText
         android:id="@+id/userWish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -60,11 +61,12 @@
         android:ems="10"
         android:gravity="start"
         android:textAlignment="textStart"
+        android:background="#fff"
         android:inputType="textPersonName"
-        android:text="@string/userWish"
+        android:hint="@string/userWish"
         android:textColor="#fff"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -85,5 +87,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userWish"
-        app:layout_constraintVertical_bias="0.458" />
+        app:layout_constraintVertical_bias="0.258" />
 </android.support.constraint.ConstraintLayout>

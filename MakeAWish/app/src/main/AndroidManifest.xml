@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DisplayWishes.DisplayWishes" />
+        <activity android:name=".DisplayWishes" />
+        <activity android:name=".WishDetailActivity"></activity>
     </application>
 
 </manifest>

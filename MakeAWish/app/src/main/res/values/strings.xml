@@ -4,4 +4,7 @@
     <string name="userTitle">Enter a title</string>
     <string name="userWish">Enter a wish</string>
     <string name="submitBtn">Submit</string>
+    <string name="wishTitle">My Title</string>
+    <string name="userMainWish">My Wish...</string>
+    <string name="wishDate">Date here...</string>
 </resources>

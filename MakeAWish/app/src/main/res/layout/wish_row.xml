@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/thumbNail"
+        android:layout_alignParentLeft="true"
+        android:src="@android:drawable/ic_menu_agenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/mainWish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/userMainWish"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@+id/thumbNail"/>
+
+    <TextView
+        android:id="@+id/userWishDate"
+        android:text="@string/wishDate"
+        android:layout_toRightOf="@+id/thumbNail"
+        android:layout_marginLeft="5dp"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:layout_below="@+id/mainWish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>
