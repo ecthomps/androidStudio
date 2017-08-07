@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,6 +19,7 @@ import model.MyWish;
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     private final ArrayList<MyWish> wishList = new ArrayList<>();
+
     public DatabaseHandler(Context context) {
         super(context, Constants.DATABASE_NAME, null, Constants.DATABASE_VERSION);
     }
@@ -30,6 +32,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 "(" + Constants.KEY_ID + "INTEGER PRIMARY KEY " + Constants.TITLE_NAME +
                 " TEXT, " + Constants.CONTENT_NAME + "TEXT, " + Constants.DATE_NAME +
                 " LONG);";
+
+        db.execSQL(CREATE_WISHES_TABLE);
     }
 
     @Override
@@ -37,11 +41,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_NAME);
 
+        Log.v("ONUPGRADE", "DROPING THE TABLE AND CREATING A NEW ONE");
+
         //create a new table
         onCreate(db);
     }
 
-    public void addWish(MyWish wish){
+    public void addWishes(MyWish wish){
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -49,9 +55,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(Constants.TITLE_NAME, wish.getTitle());
         values.put(Constants.CONTENT_NAME, wish.getContent());
-        values.put(Constants.DATE_NAME, java.lang.System.currentTimeMillis());
+        values.put(Constants.DATE_NAME, System.currentTimeMillis());
 
         db.insert(Constants.TABLE_NAME, null, values);
+
+        Log.v("wish added successfully", "great");
         db.close();
     }
 
