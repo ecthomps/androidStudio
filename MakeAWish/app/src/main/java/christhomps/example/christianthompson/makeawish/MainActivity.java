@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         title.setText("");
         content.setText("");
 
-        //Intent intent = new Intent(MainActivity.this, WishDetailActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, DisplayWishes.class);
+        startActivity(intent);
     }
 }

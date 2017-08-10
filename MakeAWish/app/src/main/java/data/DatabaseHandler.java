@@ -29,8 +29,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //create our table
         //create a String data to hold SQL cmd to create table
         String CREATE_WISHES_TABLE = "CREATE TABLE " + Constants.TABLE_NAME +
-                "(" + Constants.KEY_ID + "INTEGER PRIMARY KEY " + Constants.TITLE_NAME +
-                " TEXT, " + Constants.CONTENT_NAME + "TEXT, " + Constants.DATE_NAME +
+                "(" + Constants.KEY_ID + "INTEGER PRIMARY KEY," + Constants.TITLE_NAME +
+                " TEXT, " + Constants.CONTENT_NAME + " TEXT, " + Constants.DATE_NAME +
                 " LONG);";
 
         db.execSQL(CREATE_WISHES_TABLE);
@@ -74,7 +74,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //order list by date modified
         Cursor cursor = db.query(Constants.TABLE_NAME, new String[]{Constants.KEY_ID,
                             Constants.TITLE_NAME, Constants.CONTENT_NAME, Constants.DATE_NAME,
-                            }, null, null, null, null, Constants.DATE_NAME + "DESC");
+                            }, null, null, null, null, Constants.DATE_NAME+ "DESC");
 
         //loop through cursor if cursor has items to move to
         if(cursor.moveToFirst()) {
