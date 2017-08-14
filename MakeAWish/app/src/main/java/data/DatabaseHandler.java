@@ -71,13 +71,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //set things up to read from our DATABASE
         SQLiteDatabase db = this.getReadableDatabase();
 
+        Log.v("sqLite initialization", "successful");
+
         //order list by date modified
         Cursor cursor = db.query(Constants.TABLE_NAME, new String[]{Constants.KEY_ID,
                             Constants.TITLE_NAME, Constants.CONTENT_NAME, Constants.DATE_NAME,
-                            }, null, null, null, null, Constants.DATE_NAME+ "DESC");
+                            }, null, null, null, null, Constants.DATE_NAME + "DESC");
+
+        Log.v("cursor initialization", "successful");
+
 
         //loop through cursor if cursor has items to move to
         if(cursor.moveToFirst()) {
+
+            Log.v("cursor movedToFirst", "successful");
 
             do{
                 MyWish wish = new MyWish();
@@ -92,10 +99,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 wish.setRecordDate(dateData);
 
                 wishList.add(wish);
+                Log.v("wishList added", "successful");
             } while (cursor.moveToNext());
 
         }
-
+        Log.v("return wishList", "successful");
         return wishList;
     }
 }

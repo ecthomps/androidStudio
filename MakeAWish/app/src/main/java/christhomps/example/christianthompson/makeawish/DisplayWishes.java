@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ public class DisplayWishes extends AppCompatActivity {
 
     private DatabaseHandler dba;
     private ArrayList<MyWish> dbWishes = new ArrayList<>();
-   // private WishAdapter wishAdapter;
+    private WishAdapter wishAdapter;
     private ListView listView;
 
     @Override
@@ -35,14 +36,18 @@ public class DisplayWishes extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list);
 
-        //refreshData();
+        refreshData();
     }
 
+    //TODO: FIXME
     private void refreshData() {
         dbWishes.clear();
         dba = new DatabaseHandler(getApplicationContext());
+        Log.v("dba initialization", "successful");
+
         //collects all wishes an assigns it to wishesFromDb
         ArrayList<MyWish> wishesFromDb = dba.getWishes();
+        Log.v("dba initialization", "successful");
 
         //create a loop to collect title, dateText, and content
         for (int i = 0; i < wishesFromDb.size(); i++) {
@@ -58,95 +63,102 @@ public class DisplayWishes extends AppCompatActivity {
             myWish.setRecordDate(dateText);
 
             dbWishes.add(myWish);
+            Log.v("dba added", "successful");
         }
         dba.close();
 
         //setUp Adapter
-        //wishAdapter = new WishAdapter(DisplayWishes.this, R.layout.wish_row, dbWishes);
-        //listView.setAdapter(wishAdapter);
-        //wishAdapter.notifyDataSetChanged();
+        wishAdapter = new WishAdapter(DisplayWishes.this, R.layout.wish_row, dbWishes);
+        Log.v("wAdapter initialization", "successful");
+
+        listView.setAdapter(wishAdapter);
+        Log.v("listView adapter", "successful");
+
+        wishAdapter.notifyDataSetChanged();
+        Log.v("wAdapter notify", "successful");
     }
 
-//    public class WishAdapter extends ArrayAdapter<MyWish> {
-//        Activity activity;
-//        int layoutRes;
-//        MyWish wish;
-//        ArrayList<MyWish> mData = new ArrayList<>();
-//
-//        public WishAdapter(Activity act, int resource,
-//                           ArrayList<MyWish> data) {
-//            super(act, resource, data);
-//
-//            activity = act;
-//            layoutRes = resource;
-//            mData = data;
-//
-//            //syncs all data up correctly when you scroll up n down
-//            notifyDataSetChanged();
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            //return size of array holding all wishes
-//            return mData.size();
-//        }
-//
-//
-//        @Override
-//        public MyWish getItem(int position) {
-//            return mData.get(position);
-//        }
-//
-//        @Override
-//        public int getPosition(MyWish item) {
-//            return super.getPosition(item);
-//        }
-//
-//        @Override
-//        public long getItemId(int position) {
-//            return super.getItemId(position);
-//        }
-//
-//        //heart of ArrayAdapter where our listView and
-//        //arrayList is created
-//        @Override
-//        public View getView(int position, View convertView, ViewGroup parent){
-//
-//            View row = convertView;
-//            ViewHolder holder = null;
-//
-//            //checks to see if no row is created and creates a row
-//            if( row == null || (row.getTag()) == null){
-//
-//                LayoutInflater inflater = LayoutInflater.from(activity);
-//                row = inflater.inflate(layoutRes, null);
-//                holder = new ViewHolder();
-//
-//                holder.mTitle = (TextView) findViewById(R.id.mainWish);
-//                holder.mDate = (TextView) findViewById(R.id.userWishDate);
-//
-//                row.setTag(holder);
-//            } else {
-//                holder = (ViewHolder) row.getTag();
-//            }
-//
-//            holder.wish = getItem(position);
-//
-//            holder.mTitle.setText(holder.wish.getTitle());
-//            holder.mDate.setText(holder.wish.getRecordDate());
-//
-//            return row;
-//        }
-//
-//        class ViewHolder{
-//
-//            MyWish wish;
-//            TextView mTitle;
-//            TextView mId;
-//            TextView mContent;
-//            TextView mDate;
-//        }
-//    }
+    //TODO: FIXME
+    public class WishAdapter extends ArrayAdapter<MyWish> {
+        Activity activity;
+        int layoutRes;
+        MyWish wish;
+        ArrayList<MyWish> mData = new ArrayList<>();
+
+        public WishAdapter(Activity act, int resource,
+                           ArrayList<MyWish> data) {
+            super(act, resource, data);
+
+            activity = act;
+            layoutRes = resource;
+            mData = data;
+
+            //syncs all data up correctly when you scroll up n down
+            notifyDataSetChanged();
+        }
+
+        @Override
+        public int getCount() {
+            //return size of array holding all wishes
+            return mData.size();
+        }
+
+
+        @Override
+        public MyWish getItem(int position) {
+            return mData.get(position);
+        }
+
+        @Override
+        public int getPosition(MyWish item) {
+            return super.getPosition(item);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return super.getItemId(position);
+        }
+
+        //heart of ArrayAdapter where our listView and
+        //arrayList is created
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent){
+
+            View row = convertView;
+            ViewHolder holder = null;
+
+            //checks to see if no row is created and creates a row
+            if( row == null || (row.getTag()) == null){
+
+                LayoutInflater inflater = LayoutInflater.from(activity);
+                row = inflater.inflate(layoutRes, null);
+                holder = new ViewHolder();
+
+                holder.mTitle = (TextView) findViewById(R.id.mainWish);
+                holder.mDate = (TextView) findViewById(R.id.userWishDate);
+
+                row.setTag(holder);
+            } else {
+                holder = (ViewHolder) row.getTag();
+            }
+
+            holder.wish = getItem(position);
+
+            holder.mTitle.setText(holder.wish.getTitle());
+            holder.mDate.setText(holder.wish.getRecordDate());
+
+            return row;
+        }
+
+        class ViewHolder{
+
+            MyWish wish;
+            TextView mTitle;
+            TextView mId;
+            TextView mContent;
+            TextView mDate;
+        }
+    }
 
 
 
