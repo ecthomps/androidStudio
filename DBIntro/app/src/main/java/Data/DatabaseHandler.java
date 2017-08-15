@@ -145,7 +145,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(countQuery, null);
 
         //cursor.close();
-        
+
         return cursor.getCount();
     }
 }
