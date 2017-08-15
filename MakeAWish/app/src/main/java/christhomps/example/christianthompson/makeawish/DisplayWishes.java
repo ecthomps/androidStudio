@@ -136,23 +136,26 @@ public class DisplayWishes extends AppCompatActivity {
 
                 holder.mTitle = (TextView) findViewById(R.id.mainWish);
                 holder.mDate = (TextView) findViewById(R.id.userWishDate);
+                Log.v("holder initialization", "successful");
 
                 row.setTag(holder);
+                Log.v("row setTag", "successful");
             } else {
                 holder = (ViewHolder) row.getTag();
             }
 
-            holder.wish = getItem(position);
+            holder.myWish = getItem(position);
 
-            holder.mTitle.setText(holder.wish.getTitle());
-            holder.mDate.setText(holder.wish.getRecordDate());
+            holder.mTitle.setText(holder.myWish.getTitle());
+            holder.mDate.setText(holder.myWish.getRecordDate());
 
+            Log.v("row returned", "successful");
             return row;
         }
 
         class ViewHolder{
 
-            MyWish wish;
+            MyWish myWish;
             TextView mTitle;
             TextView mId;
             TextView mContent;

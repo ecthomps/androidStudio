@@ -12,5 +12,5 @@ public class Constants {
     public static final String TITLE_NAME = "title";
     public static final String CONTENT_NAME = "content";
     public static final String DATE_NAME = "recordDate";
-    public static final String KEY_ID = "_id";
+    public static final String KEY_ID = "id";
 }

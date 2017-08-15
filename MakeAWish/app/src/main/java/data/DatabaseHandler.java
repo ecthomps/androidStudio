@@ -29,7 +29,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //create our table
         //create a String data to hold SQL cmd to create table
         String CREATE_WISHES_TABLE = "CREATE TABLE " + Constants.TABLE_NAME +
-                "(" + Constants.KEY_ID + "INTEGER PRIMARY KEY," + Constants.TITLE_NAME +
+                "(" + Constants.KEY_ID + " INTEGER PRIMARY KEY," + Constants.TITLE_NAME +
                 " TEXT, " + Constants.CONTENT_NAME + " TEXT, " + Constants.DATE_NAME +
                 " LONG);";
 
@@ -75,8 +75,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         //order list by date modified
         Cursor cursor = db.query(Constants.TABLE_NAME, new String[]{Constants.KEY_ID,
-                            Constants.TITLE_NAME, Constants.CONTENT_NAME, Constants.DATE_NAME,
-                            }, null, null, null, null, Constants.DATE_NAME + "DESC");
+                                 Constants.TITLE_NAME, Constants.CONTENT_NAME, Constants.DATE_NAME,
+                                }, null, null, null, null, Constants.DATE_NAME + " DESC");
 
         Log.v("cursor initialization", "successful");
 
@@ -93,8 +93,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
                 //use dateFormat to format our date
                 java.text.DateFormat dateFormat = java.text.DateFormat.getDateInstance();
-                String dateData = dateFormat.format(new Date(cursor.getLong
-                                (cursor.getColumnIndex(Constants.DATE_NAME))).getTime());
+                String dateData = dateFormat.format(new Date(cursor.getLong(cursor.getColumnIndex(Constants.DATE_NAME))).getTime());
 
                 wish.setRecordDate(dateData);
 
