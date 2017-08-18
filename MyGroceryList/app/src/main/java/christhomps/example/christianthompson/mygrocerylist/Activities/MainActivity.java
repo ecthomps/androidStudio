@@ -76,5 +76,20 @@ public class MainActivity extends AppCompatActivity {
         //build and show the dialog
         dialog = dialogBuilder.create();
         dialog.show();
+
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //TODO:Save to DB
+                //TODO: Go to next_screen
+                saveGroceryToDb(v);
+            }
+        });
+    }
+
+    private void saveGroceryToDb(View v){
+
     }
 }
