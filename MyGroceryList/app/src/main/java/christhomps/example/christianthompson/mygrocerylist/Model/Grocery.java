@@ -20,4 +20,36 @@ public class Grocery {
         this.dateItemAdded = dateItemAdded;
         this.id = id;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGroceryQty() {
+        return groceryQty;
+    }
+
+    public void setGroceryQty(String groceryQty) {
+        this.groceryQty = groceryQty;
+    }
+
+    public String getDateItemAdded() {
+        return dateItemAdded;
+    }
+
+    public void setDateItemAdded(String dateItemAdded) {
+        this.dateItemAdded = dateItemAdded;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
