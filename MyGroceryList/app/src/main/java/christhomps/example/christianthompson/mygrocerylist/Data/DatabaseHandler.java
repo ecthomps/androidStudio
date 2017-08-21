@@ -65,7 +65,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //Insert the row
         db.insert(Constants.TABLE_NAME, null, values);
 
-        Log.d("SAVED!!!", "SAVED DB");
+        Log.d("SAVED!!!", "SAVED to DB");
 
     }
 
@@ -75,10 +75,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         List<Grocery> groceryList = new ArrayList<>();
 
+        //cursor allows us to iterate through our DB easily
         Cursor cursor = db.query(Constants.TABLE_NAME, new String[] {Constants.KEY_ID,
                 Constants.KEY_GROCERY_ITEM, Constants.KEY_QTY_NUMBER,
                 Constants.KEY_DATE_NAME}, Constants.KEY_ID + "=?",
                 new String [] {String.valueOf(id)}, null, null, null, null);
+
+        //NB: "=?" --> means query to ask
 
         if(cursor != null)
             cursor.moveToFirst();
@@ -103,7 +106,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Get all Groceries
-    public List<Grocery> getAllGroceries () {
+    public List<Grocery> getAllGroceries() {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -138,7 +141,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
             } while(cursor.moveToNext());
         }
-
 
         return groceryList;
     }

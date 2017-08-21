@@ -4,6 +4,9 @@
     <string name="first_item">Add Item to List</string>
     <string name="enter_item">Enter Grocery Item</string>
     <string name="hint_item">Enter Grocery</string>
-    <string name="qty_hint">Qunatity</string>
+    <string name="qty_hint">Quantity</string>
     <string name="save_title">SAVE</string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="groceryName">Grocery Name</string>
+    <string name="date">Date:</string>
 </resources>
